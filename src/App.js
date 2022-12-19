@@ -27,11 +27,11 @@ function App() {
     <Router>
       <Routes>
 
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/home2/:ID" element={<Home2 />} />
         <Route path="/home3/:ID/:name" element={<Home3 />} />
 
-        <Route path="/parent" element={<Parent />} />
+        <Route path="/" element={<Parent />} />
 
 
 
