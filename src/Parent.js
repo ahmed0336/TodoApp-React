@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Child from './Components/Child'
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const Parent = () => {
 
@@ -144,8 +145,8 @@ const Parent = () => {
         <>
             {/* <div className='d-flex' > */}
             <div className='father' >
-
-
+                     
+            <Scrollbars style={{ width: 300, height: 500 }}>
                 <div className='form-todo' >
 
 
@@ -179,6 +180,8 @@ const Parent = () => {
                     </ul>
 
                 </div>
+
+                </Scrollbars>
 
             </div>
 

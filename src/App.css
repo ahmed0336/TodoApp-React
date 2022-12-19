@@ -99,6 +99,7 @@ background: url("https://i.stack.imgur.com/SvWWN.png");
 {
   width: 300px;
   height: 350px;
+  min-height: 500px;
   border-radius: 2px solid #000;
   padding: 25px; 
   color: black;
