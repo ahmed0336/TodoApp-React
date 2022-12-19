@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-  <div className='wraper   ' >
+  <div className='wraper' >
 
 
 <NavLink className={'navlink'}  to={"/"} style={({isActive})=>{return ({color:isActive ? 'red'  : ""})}} >Home </NavLink>

@@ -149,7 +149,7 @@ const Parent = () => {
                 <div className='form-todo' >
 
 
-                    <p>My Todo App</p>
+                    <p>My TodoApp</p>
                     <p style={{ color: "red" }} >{
                         errormsg}
                     </p>
