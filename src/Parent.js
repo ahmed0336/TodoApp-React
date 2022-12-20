@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Child from './Components/Child'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import { FiPlus} from "react-icons/fi";
+import { FiEdit} from "react-icons/fi";
+
+
 
 const Parent = () => {
 
@@ -155,13 +159,16 @@ const Parent = () => {
                         errormsg}
                     </p>
 
+                    <div  className='d-flex justify-content-between' >
                     <input type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
                     {
                         toglebtn == true ?
-                            <button type="button" className='plusbtn' onClick={additem} >+</button> : <button type="button" className='plusbtn' onClick={additem}  >edit</button>
+                            <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button> : <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
                     }
+                     
+                    </div>
 
-
+                    
                     <ul className='ultag' >
                         {
                             store?.map((el, index) => {
@@ -178,6 +185,10 @@ const Parent = () => {
                         }
 
                     </ul>
+
+                  
+
+
 
                 </div>
 

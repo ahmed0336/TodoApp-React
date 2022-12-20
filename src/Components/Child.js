@@ -21,10 +21,10 @@ const Child = ({data,index,del,edit,btn}) => {
     
     
 
-    <li key={index} style={{listStyle:"none"}} >
+    <li className='mx-4' key={index} style={{listStyle:"none"}} >
     {data} 
-    <button type="button" className='dltbtn ' onClick={()=>{edit(index,btn)}}  >eidit</button>
-    <button type="button" className='dltbtn ' onClick={()=>{del(index)}}  >delete</button>
+    <button type="button" className='dltbtn' onClick={()=>{edit(index,btn)}}  >eidit</button>
+    <button type="button" className='dltbtn' onClick={()=>{del(index)}}  >delete</button>
     
  
     </li>
