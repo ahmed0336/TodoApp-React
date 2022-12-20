@@ -45,6 +45,8 @@ const Parent = () => {
 
             settoglebtn(true)
             setstore(getoldtodoelement)
+
+            setinputvalue('')
              
 
 
