@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Child from './Components/Child'
 import { Scrollbars } from 'react-custom-scrollbars-2';
-import { FiPlus} from "react-icons/fi";
-import { FiEdit} from "react-icons/fi";
+import { FiPlus } from "react-icons/fi";
+import { FiEdit } from "react-icons/fi";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { AiFillCloseCircle } from "react-icons/ai";
+
+
 
 
 
@@ -20,6 +25,24 @@ const Parent = () => {
 
     const [edititem, setedititem] = useState(null)
 
+    const localStoragedata=JSON.parse(localStorage.getItem('todo'))
+
+    console.log("localStoragedata",localStoragedata)
+     
+    const[ahmedbaloch,setahmedbaloch]=useState([])
+
+    console.log("ahmed==>",ahmedbaloch)
+    
+
+    // useEffect(()=>{
+    //     mylocalstoreg()
+    //     const localStoragedata = localStorage.getItem('todo');
+    //     console.log("localStoragedata==>",localStoragedata)
+    //     setahmedbaloch(localStoragedata)
+    // },[ahmedbaloch])
+
+    const [show, setshow] = useState(false)
+   
 
 
     console.log("my store==>", store)
@@ -27,27 +50,28 @@ const Parent = () => {
 
     const additem = () => {
 
+
         if (inputvalue == "") {
             seterrormsg("Please Enter your Todo List ")
         }
 
-        else if (inputvalue !==  "" && !toglebtn) {
-
-            // console.log("input inside edit function",inputvalue)
+        else if (inputvalue !== "" && !toglebtn) {
 
             console.log("baloch==>", edititem)
-              
-            let getoldtodoelement= [...store]
 
-            console.log("update continue",getoldtodoelement)
-               
-            getoldtodoelement[edititem] =inputvalue
+            let getoldtodoelement = [...store]
+
+            console.log("update continue", getoldtodoelement)
+
+            getoldtodoelement[edititem] = inputvalue
+
 
             settoglebtn(true)
             setstore(getoldtodoelement)
 
             setinputvalue('')
-             
+
+            localStorage.setItem("todo",JSON.stringify([...getoldtodoelement]))
 
 
             // setstore(() => {
@@ -80,7 +104,7 @@ const Parent = () => {
 
             })
 
-            localStorage.setItem("todo", [...store, inputvalue])
+            localStorage.setItem("todo",JSON.stringify([...store, inputvalue]))
 
 
             setinputvalue('')
@@ -117,7 +141,9 @@ const Parent = () => {
         settoglebtn(false)
         setinputvalue(editid)
 
+
         setedititem(a)
+
 
 
 
@@ -126,6 +152,8 @@ const Parent = () => {
     }
 
     console.log("edit item==>", edititem)
+
+
 
     // const edittodo = () =>{
     //     setstore(() => {
@@ -140,11 +168,32 @@ const Parent = () => {
 
     // }
 
-    const something=(event)=> {
+    const something = (event) => {
         if (event.keyCode === 13) {
             console.log('enter')
             additem()
         }
+        else if (event.keyCode === 8) {
+
+            console.log("backspace==>", event.keyCode)
+        }
+
+
+    }
+
+
+    const predata = () => {
+
+        
+        // settodostate(localStoragetodo)
+        setshow(true)
+
+
+    }
+
+    const handleClose = () => {
+        // settodostate(localStoragetodo)
+        setshow(false)
     }
 
 
@@ -152,55 +201,83 @@ const Parent = () => {
         <>
             {/* <div className='d-flex' > */}
             <div className='father' >
-                     
-            <Scrollbars style={{ width: 300, height: 500 }}>
-                <div className='form-todo' >
+
+                <Scrollbars style={{ width: 300, height: 500 }}>
+                    <div className='form-todo' >
 
 
-                    <p>My TodoApp</p>
-                    <p style={{ color: "red" }} >{
-                        errormsg}
-                    </p>
+                        <p>My TodoApp</p>
+                        <button onClick={predata} >check History</button>
+                        <p style={{ color: "red" }} >{
+                            errormsg}
+                        </p>
 
-                    <div  className='d-flex justify-content-between' >
-                    <input maxLength={20} type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
-                    {
-                        toglebtn == true ?
-                            <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button> : <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
-                    }
-                     
+                        <div className='d-flex justify-content-between' >
+                            <input maxLength={20} type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
+                            {
+                                toglebtn == true ?
+                                    <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button> : <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
+                            }
+
+                        </div>
+
+
+                        <ul className='ultag' >
+                            {
+                                store?.map((el, index) => {
+                                    return (
+                                        <>
+
+                                            <Child index={index} data={el} btn={toglebtn} del={deletefunction} edit={eiditfunction} />
+
+                                        </>
+                                    )
+                                })
+
+
+                            }
+
+                        </ul>
+
+
+
+
+
                     </div>
-
-                    
-                    <ul className='ultag' >
-                        {
-                            store?.map((el, index) => {
-                                return (
-                                    <>
-
-                                        <Child  index={index} data={el} btn={toglebtn} del={deletefunction} edit={eiditfunction} />
-
-                                    </>
-                                )
-                            })
-
-
-                        }
-
-                    </ul>
-
-                  
-
-
-
-                </div>
 
                 </Scrollbars>
 
             </div>
 
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header >
 
+                    <Modal.Title>Your TodoApp History</Modal.Title>
+                    <AiFillCloseCircle fontSize={30} onClick={handleClose} />
+                </Modal.Header>
+                <Modal.Body>
+                    {/* <p>hello baloch</p> */}
 
+                    {
+                       localStoragedata.length > 0 ? 
+                             
+                       localStoragedata?.map((data,index)=>{
+                                return(
+                                    <>
+                                     <h3>{data}</h3>
+                                    </>
+                                )
+                             }): <p>no data found</p>
+                                   
+                             }
+                </Modal.Body>
+                <Modal.Footer>
+                  
+                    {/* <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button> */}
+                </Modal.Footer>
+            </Modal>
 
         </>
     )
