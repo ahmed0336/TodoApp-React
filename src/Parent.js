@@ -161,7 +161,7 @@ const Parent = () => {
                     </p>
 
                     <div  className='d-flex justify-content-between' >
-                    <input type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
+                    <input maxLength={20} type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
                     {
                         toglebtn == true ?
                             <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button> : <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
