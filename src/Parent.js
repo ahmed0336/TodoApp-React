@@ -205,6 +205,7 @@ const Parent = () => {
     const clearlocal = () =>{
         localStorage.clear();
         setstore([])
+        setinputvalue('')
     }
 
     const handleClose = () => {
