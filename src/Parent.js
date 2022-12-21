@@ -6,9 +6,14 @@ import { FiEdit } from "react-icons/fi";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { AiFillCloseCircle } from "react-icons/ai";
+import Header2 from './Components/Header2';
 
 
 
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import RightSlider from './Components/RightSlider';
+// import Button from 'react-bootstrap/Button';
 
 
 
@@ -25,14 +30,14 @@ const Parent = () => {
 
     const [edititem, setedititem] = useState(null)
 
-    const localStoragedata=JSON.parse(localStorage.getItem('todo'))
+    const localStoragedata = JSON.parse(localStorage.getItem('todo'))
 
-    console.log("localStoragedata",localStoragedata)
-     
-    const[ahmedbaloch,setahmedbaloch]=useState([])
+    console.log("localStoragedata", localStoragedata)
 
-    console.log("ahmed==>",ahmedbaloch)
-    
+    const [ahmedbaloch, setahmedbaloch] = useState([])
+
+    console.log("ahmed==>", ahmedbaloch)
+
 
     // useEffect(()=>{
     //     mylocalstoreg()
@@ -42,7 +47,13 @@ const Parent = () => {
     // },[ahmedbaloch])
 
     const [show, setshow] = useState(false)
-   
+
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
 
 
     console.log("my store==>", store)
@@ -71,7 +82,7 @@ const Parent = () => {
 
             setinputvalue('')
 
-            localStorage.setItem("todo",JSON.stringify([...getoldtodoelement]))
+            localStorage.setItem("todo", JSON.stringify([...getoldtodoelement]))
 
 
             // setstore(() => {
@@ -104,7 +115,7 @@ const Parent = () => {
 
             })
 
-            localStorage.setItem("todo",JSON.stringify([...store, inputvalue]))
+            localStorage.setItem("todo", JSON.stringify([...store, inputvalue]))
 
 
             setinputvalue('')
@@ -184,11 +195,16 @@ const Parent = () => {
 
     const predata = () => {
 
-        
+
         // settodostate(localStoragetodo)
         setshow(true)
 
 
+    }
+
+    const clearlocal = () =>{
+        localStorage.clear();
+        setstore([])
     }
 
     const handleClose = () => {
@@ -199,10 +215,10 @@ const Parent = () => {
 
     return (
         <>
-            {/* <div className='d-flex' > */}
-                {/* <div>
-                    hello navbar
-                </div> */}
+            {/* <div className='outerdiv' >
+                <Header2 />
+            </div> */}
+
             <div className='father' >
 
                 <Scrollbars style={{ width: 300, height: 500 }}>
@@ -211,6 +227,11 @@ const Parent = () => {
 
                         <p>Welcome To My TodoApp</p>
                         <button onClick={predata} >check History</button>
+                        
+                        <span>
+                        <button onClick={clearlocal} >Clear History</button>
+                        </span>
+
                         <p style={{ color: "red" }} >{
                             errormsg}
                         </p>
@@ -262,20 +283,20 @@ const Parent = () => {
                     {/* <p>hello baloch</p> */}
 
                     {
-                       localStoragedata?.length > 0 ? 
-                             
-                       localStoragedata?.map((data,index)=>{
-                                return(
+                        localStoragedata?.length > 0 ?
+
+                            localStoragedata?.map((data, index) => {
+                                return (
                                     <>
-                                     <h3>{data}</h3>
+                                        <h3>{data}</h3>
                                     </>
                                 )
-                             }): <p>no data found</p>
-                                   
-                             }
+                            }) : <p>no data found</p>
+
+                    }
                 </Modal.Body>
                 <Modal.Footer>
-                  
+
                     {/* <Button variant="primary" onClick={handleClose}>
                         Save Changes
                     </Button> */}

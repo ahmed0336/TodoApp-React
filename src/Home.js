@@ -5,6 +5,10 @@ import { Button } from 'react-bootstrap';
 import { NavLink, useNavigate ,Link, useParams } from 'react-router-dom';
 import Header from './Components/Header';
 
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import RightSlider from './Components/RightSlider';
+
 const Home = () => {
     const params  =  useParams()
   console.log(params)
@@ -89,6 +93,11 @@ const Home = () => {
          <h1>{`my name is ${name} and useref ${preref.current}`}</h1>
  
       <Button onClick={helloworld} >hello</Button>
+
+
+      {['start', 'end', 'top', 'bottom'].map((placement, idx) => (
+                <RightSlider key={idx} placement={placement} name={placement} />
+            ))}
 
   
     </>
