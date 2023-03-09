@@ -81,8 +81,7 @@
 }
 
 .poster__image {
-    /* display: flex; */
-    /* margin-left: 10%; */
+ 
 }
 
 .poster__content__title {
@@ -177,6 +176,12 @@ left: 104px; */
 
     .poster__content {
         margin-left: 6%;
+    }
+
+  
+    .poster__image__mobile-img{
+        height: 400px;
+        width: 300px;
     }
 
 

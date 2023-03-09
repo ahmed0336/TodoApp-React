@@ -90,7 +90,7 @@ const Calculator = () => {
 
                 <div className='poster__image' >
 
-                    <img src={mobile_img} alt='img' height={400} width={400} />
+                    <img src={mobile_img} alt='img' className='poster__image__mobile-img'  />
 
                 </div>
 
