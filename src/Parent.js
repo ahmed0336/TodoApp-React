@@ -65,7 +65,6 @@ const Parent = () => {
         if (inputvalue == "") {
             seterrormsg("Please Enter your Todo List ")
         }
-
         else if (inputvalue !== "" && !toglebtn) {
 
             console.log("baloch==>", edititem)
@@ -75,16 +74,10 @@ const Parent = () => {
             console.log("update continue", getoldtodoelement)
 
             getoldtodoelement[edititem] = inputvalue
-
-
             settoglebtn(true)
             setstore(getoldtodoelement)
-
             setinputvalue('')
-
             localStorage.setItem("todo", JSON.stringify([...getoldtodoelement]))
-
-
             // setstore(() => {
             //     store.map((el, c) => {
 
@@ -110,9 +103,6 @@ const Parent = () => {
 
             setstore(() => {
                 return [...store, inputvalue]
-
-
-
             })
 
             localStorage.setItem("todo", JSON.stringify([...store, inputvalue]))
@@ -154,11 +144,6 @@ const Parent = () => {
 
 
         setedititem(a)
-
-
-
-
-
 
     }
 
@@ -223,9 +208,7 @@ const Parent = () => {
             <div className='father' >
 
                 <Scrollbars style={{ width: 300, height: 500 }}>
-                    <div className='form-todo' >
-
-
+                    <div className='form-todo'>
                         <p>Welcome To My TodoApp</p>
                         <button onClick={predata} >check History</button>
                         
@@ -233,15 +216,17 @@ const Parent = () => {
                         <button onClick={clearlocal} >Clear History</button>
                         </span>
 
-                        <p style={{ color: "red" }} >{
-                            errormsg}
+                        <p style={{ color: "red" }} >
+                            { errormsg }
                         </p>
 
                         <div className='d-flex justify-content-between' >
-                            <input maxLength={20} type="text" value={inputvalue} onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
+                            <input maxLength={20} type="text" value={inputvalue} placeholder="Enter Task" onKeyDown={(e) => something(e)} onChange={(e) => setinputvalue(e.target.value)} />
                             {
                                 toglebtn == true ?
-                                    <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button> : <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
+                                    <button type="button" className='plusbtn' onClick={additem} ><FiPlus /></button>
+                                     : 
+                                     <button type="button" className='plusbtn' onClick={additem}  ><FiEdit /></button>
                             }
 
                         </div>
@@ -263,11 +248,6 @@ const Parent = () => {
                             }
 
                         </ul>
-
-
-
-
-
                     </div>
 
                 </Scrollbars>
@@ -276,7 +256,6 @@ const Parent = () => {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header >
-
                     <Modal.Title>Your TodoApp History</Modal.Title>
                     <AiFillCloseCircle fontSize={30} onClick={handleClose} />
                 </Modal.Header>

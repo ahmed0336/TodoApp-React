@@ -14,6 +14,7 @@ import Home  from './Home';
 import Home2 from './Home2';
 import Home3 from './Home3';
 import Parent from './Parent';
+import Calculator from './Calculator';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         <Route path="/home3/:ID/:name" element={<Home3 />} />
 
         <Route path="/" element={<Parent />} />
+        <Route path="/calculator" element={<Calculator />} />
+
+        
 
 
 

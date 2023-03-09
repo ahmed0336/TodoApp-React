@@ -1,0 +1,28 @@
+/* . a .navbar-light .navbar-brand .black  {
+    color: #000 !important;
+}
+. a .navbar-light .navbar-brand .white {
+    color: #fff !important;
+} */
+
+a.navbar-light.navbar-brand.black{
+    color: #000 !important;
+}
+
+a.navbar-light.navbar-brand.white {
+    color: #fff !important;
+}
+
+.navbar-light .navbar-nav .nav-link.black {
+    color: #000 !important;
+}
+
+.navbar-light .navbar-nav .nav-link.white {
+    color: #fff !important;
+}
+
+
+/* .bg-transparent {
+    background-color: transparent!important;
+    color: azure;
+} */

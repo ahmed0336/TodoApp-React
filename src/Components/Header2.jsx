@@ -7,6 +7,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/Button';
+import './Header2.css'
+
 const Header2 = () => {
 
     const [scrolled, setscrolled] = useState(false)
@@ -41,20 +43,24 @@ const Header2 = () => {
     return (
         <>
             {/* className={scrolled ? "bg-grey tofiexd" : "bg-white" }  */}
-            <Navbar collapseOnSelect expand="md" className={scrolled ? " fixed-top bg-white" : "bg-transparent text-white"} >
+                
+            <section className="" style={{ position: "absolute", width: "100%" }}>
+
+            <Navbar collapseOnSelect expand="md" className={scrolled ? " fixed-top bg-white " : "bg-transparent "} >
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand className={scrolled ? "navbar-light navbar-brand black" : "navbar-light navbar-brand white" }  href="#home" >React-Bootstrap</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
+
+                    <Navbar.Collapse id={scrolled ? "responsive-navbar-nav fixed-top bg-white " : "responsive-navbar-nav bg-dark  " } >
                         <Nav className="m-auto">
-                            <Nav.Link href="#features" className='mx-2' >Home</Nav.Link>
-                            <Nav.Link href="#pricing" className='mx-2'>Reservation</Nav.Link>
-                            <Nav.Link href="#pricing" className='mx-2'>History</Nav.Link>
-                            <Nav.Link href="#pricing" className='mx-2'>Profile</Nav.Link>
+                            <Nav.Link className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"} href="#features"  >Home</Nav.Link>
+                            <Nav.Link href="#pricing" className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"} >Reservation</Nav.Link>
+                            <Nav.Link href="#pricing" className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"} >History</Nav.Link>
+                            <Nav.Link href="#pricing" className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"} >Profile</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"}   href="#deets">More deets</Nav.Link>
+                            <Nav.Link className={scrolled ? "mx-2 navbar-light navbar-nav nav-link black" : " mx-2 navbar-light navbar-nav nav-link white"}  eventKey={2} href="#memes">
                                 Dank memes
                             </Nav.Link>
                         </Nav>
@@ -62,7 +68,8 @@ const Header2 = () => {
                 </Container>
             </Navbar>
 
-
+          
+          </section>
           
 
 
