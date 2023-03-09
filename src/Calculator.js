@@ -87,11 +87,9 @@ const Calculator = () => {
                     representative will meet you at LAX, curbside, to valet your  vehicle. That's It! You're off to your flight! <br /> And now offering a complete suite of expedited VIP services to pair with your valet parking to enhance your airport travel.
                     </p>
                 </div>
-
                 <div className='poster__image' >
 
                     <img src={mobile_img} alt='img' className='poster__image__mobile-img'  />
-
                 </div>
 
             </div>

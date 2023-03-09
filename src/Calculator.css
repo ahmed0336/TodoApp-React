@@ -84,6 +84,11 @@
  
 }
 
+.poster__image__mobile-img{
+    height: 400px;
+    width: 400px;
+}
+
 .poster__content__title {
 
     /* position: absolute;
@@ -181,7 +186,7 @@ left: 104px; */
   
     .poster__image__mobile-img{
         height: 400px;
-        width: 300px;
+        width: 400px;
     }
 
 
