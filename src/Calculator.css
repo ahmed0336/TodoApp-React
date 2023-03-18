@@ -325,11 +325,15 @@ left: 104px; */
     }
 
 
+    /* main point agar colunm hai tou justify content ==>verticall kam kreg ,align==>horizontaly */
+    /* height zarori hai wrna justify-content: space-between kam nai krega; column me */
+
     .hiwsection__div1 {
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
+        justify-content: space-between !important;
+        gap: 30px;
     }
 
     .hiwsection__div1__card1 {
@@ -340,7 +344,7 @@ left: 104px; */
         border-radius: 20px;
         width: 80%;
         height: 151px;
-        margin-bottom: 5%;
+        /* margin-bottom: 5%; */
     }
 
     .hiwsection__div1__card2 {
@@ -351,7 +355,7 @@ left: 104px; */
         border-radius: 20px;
         width: 80%;
         height: 151px;
-        margin-bottom: 5%;
+        /* margin-bottom: 5%; */
     }
 
     .hiwsection__div1__card3 {
@@ -362,7 +366,7 @@ left: 104px; */
         border-radius: 20px;
         width: 80%;
         height: 151px;
-        margin-bottom: 5%;
+        /* margin-bottom: 5%; */
     }
 
     .hiwsection__div1__card1__para {
