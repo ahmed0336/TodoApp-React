@@ -83,16 +83,78 @@ const Calculator = () => {
                 <div className='poster__content' >
                     <div className='poster__content__title' >100% Contactless <br /> Valet Parking</div>
                     <div className='poster__content__subtitle' >We meet you <br /> directly at your  <br /> Terminal</div>
-                    <p className='poster__content__paragraph' > Book online, then drive directly to your terminal. An LAX Valet Service <br /> 
-                    representative will meet you at LAX, curbside, to valet your  vehicle. That's It! You're off to your flight! <br /> And now offering a complete suite of expedited VIP services to pair with your valet parking to enhance your airport travel.
+                    <p className='poster__content__paragraph' > Book online, then drive directly to your terminal. An LAX Valet Service <br />
+                        representative will meet you at LAX, curbside, to valet your  vehicle. That's It! You're off to your flight! <br /> And now offering a complete suite of expedited VIP services to pair with your valet parking to enhance your airport travel.
                     </p>
                 </div>
                 <div className='poster__image' >
 
-                    <img src={mobile_img} alt='img' className='poster__image__mobile-img'  />
+                    <img src={mobile_img} alt='img' className='poster__image__mobile-img' />
                 </div>
 
             </div>
+
+            {/* how it section */}
+
+            <section>
+
+                <div className='hiwsection' >
+
+                     <div className='hiwsection__title' >
+                        <h1 className='hiwsection__title__h1' >
+                            Here is<br /> how it <br /> works.
+                        </h1>
+                    </div> 
+
+                    <div className='hiwsection__div1' >
+
+                        <div className='hiwsection__div1__card1' >
+                            <div className='hiwsection__div1__card1__title' >
+                                01
+                            </div>
+
+                            <div className='hiwsection__div1__card1__para' >
+                                book and prepay <br /> online for valet <br /> parking
+                            </div>
+
+                        </div>
+
+                        <div className='hiwsection__div1__card2' >
+                            <div className='hiwsection__div1__card1__title' >
+                                02
+                            </div>
+
+                            <div className='hiwsection__div1__card1__para' >
+                                when you are <br /> approaching <br /> lax,  text us at
+                            </div>
+
+                        </div>
+
+                        <div className='hiwsection__div1__card3' >
+
+                            <div className='hiwsection__div1__card1__title' >
+                                03
+                            </div>
+
+                            <div className='hiwsection__div1__card1__para' >
+                                we will meet <br /> you at your <br /> terminal, <br /> curbside, to <br /> valet your <br /> vehicle.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    {/* <div className='hiwsection__div2' >
+                        <h1>hello</h1>
+                    </div> */}
+
+
+                </div>
+
+            </section>
+
+            {/* how it section */}
 
 
 
