@@ -17,6 +17,7 @@ const Calculator = () => {
 
     },[])
 
+    
     const testinomialarray = [
         {
             name: "Ahmed",
