@@ -279,6 +279,11 @@ left: 104px; */
 
 /* how it work section end */
 
+/* testonomial */
+.testonomial{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header2 from './Components/Header2'
 import img1 from './netfilx.jpg'
 import img2 from './Group 602.png'
@@ -8,6 +8,125 @@ import './Calculator.css'
 import mobile_img from './mobile-img.png'
 
 const Calculator = () => {
+
+
+    useEffect(()=>{
+
+        upfunction()
+        downfunction()
+
+    },[])
+
+    const testinomialarray = [
+        {
+            name: "Ahmed",
+            Review: "It was a great Experience!",
+            description: "I have used your service for some years and always found it reliable and reasonable.Recently, two of your employees did a little extra for me.  When I was brought home on Sat., Jan. 20, a book slipped out of a side pocket of my bag and was left in the trunk.  When I realized what must have happened, I phoned the dispatcher on Monday morning.  Within an hour, she called to say that the driver had the book and that he would return it when in the area.I had it later in the day.Thanks to both people for their help."
+
+        },
+        {
+            name: "Yaseen",
+            Review: "Always Found It Reliable And Reasonable",
+            description: "I have trusted Airflight Services on several occasions over the past 7 years to get me to the airport with no hitches or worries on my end. I do not travel a lot, but I do recognize and appreciate a good transportation service when I find it. Taxi provides excellent service with friendly interactions – and their fleet appears to be regularly maintained, which is something that I look for in public transportation. Thank you for providing this much-needed service!"
+
+        },
+        {
+            name: "Adnan",
+            Review: "I Find Their Service High Class",
+            description: "As a person who likes to travel a lot, I have used many taxi companies and other community services but, unlike any other, Airflight has by far been the best. When the car arrived in front of my doorstep, I would expect a regular car that one might find on a common cab, but I ended up with a nice Lincoln SUV."
+
+        }
+    ]
+
+
+    const jd = [
+        {
+          name:"Ahmed",
+          job:"developer"
+    },
+    {
+        name:"Yaseen",
+        job:"businessman"
+  },
+  {
+    name:"Adnan",
+    job:"front0end"
+}
+]
+const [counter,setcounter]=useState(-1)
+
+const [title,settitle]=useState('')
+const [job,setjob]=useState('')
+
+const [Review,setReview]=useState('')
+const [ReviewName,setReviewName]=useState('')
+
+
+
+
+
+console.log("counter==>",counter)
+
+
+
+const upfunction = () =>{
+    
+    // setcounter(counter+1)
+// console.log("upfunction",counter)
+
+// console.log("testinomialarray.length",testinomialarray.length-1)
+
+
+if(counter < testinomialarray.length-1 ){
+    setcounter(counter+1)
+    console.log("testinomialarray==>",testinomialarray)
+
+    let filterTestonomialData=testinomialarray.filter((a,index)=>index == (counter+1))
+
+
+    let filterJDData=jd.filter((a,index)=>index == (counter+1))
+
+
+        
+    settitle(filterJDData[0]?.name)
+    setjob(filterJDData[0]?.job)
+
+    // console.log("filterdata",filterdata[0].name)
+
+    setReviewName(filterTestonomialData[0]?.name)
+    setReview(filterTestonomialData[0]?.Review)
+
+
+}
+
+}
+
+const downfunction = () =>{
+    console.log("downfunction")
+
+    if(counter > 0 )
+    {
+      
+        setcounter(counter-1)
+
+        let filterTestonomialData=testinomialarray.filter((a,index)=>index == (counter-1))
+
+        let filterJDData=jd.filter((a,index)=>index == (counter-1))
+
+
+        
+    settitle(filterJDData[0].name)
+    setjob(filterJDData[0].job)
+
+    setReviewName(filterTestonomialData[0]?.name)
+    setReview(filterTestonomialData[0]?.Review)
+
+
+
+    }
+
+
+}
 
 
 
@@ -100,11 +219,11 @@ const Calculator = () => {
 
                 <div className='hiwsection' >
 
-                     <div className='hiwsection__title' >
+                    <div className='hiwsection__title' >
                         <h1 className='hiwsection__title__h1' >
                             Here is<br /> how it <br /> works.
                         </h1>
-                    </div> 
+                    </div>
 
                     <div className='hiwsection__div1' >
 
@@ -155,6 +274,54 @@ const Calculator = () => {
             </section>
 
             {/* how it section */}
+
+
+
+            <div className='testonomial' >
+                <div className='testonomial__left' >
+
+                    <div className='card' >
+                        <div className='card-body' >
+                            {/* {
+                               jd.map((data,index)=>{
+                                return(
+                                    <> */}
+                                     <h2>{title}</h2>
+                                     <p>{job}</p>
+                                    {/* </>
+                                )
+                               }) 
+                            } */}
+                           
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className='testonomial__center' >
+                    <button type='button' onClick={()=>upfunction()} >up</button>
+                    <button type='button' onClick={()=>downfunction()} >down</button>
+                </div>
+
+                <div className='testonomial__right' >
+                    {/* {
+                        testinomialarray.map((data, index) => {
+                            return (
+                                <> */}
+                                    <h2>{ReviewName}</h2>
+                                    <p>{Review}</p>
+                                {/* </>
+                            )
+                        })
+                    } */}
+
+
+                </div>
+
+            </div>
+
+
+
 
 
 
