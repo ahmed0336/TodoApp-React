@@ -26,3 +26,8 @@ a.navbar-light.navbar-brand.white {
     background-color: transparent!important;
     color: azure;
 } */
+
+.bg-white {
+    background-color: #fff!important;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}

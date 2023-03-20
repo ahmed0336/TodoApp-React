@@ -307,13 +307,24 @@ left: 104px; */
     }
 
 
-    .poster {
+    /* .poster {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: baseline;
         margin-top: 5%;
+        }
+    } */
+
+    .poster {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: end;
+        margin-top: 5%;
+        align-items: flex-end;
     }
+    
 
     .poster__content {
         margin-left: 6%;
@@ -405,4 +416,13 @@ left: 104px; */
         color: #FFFFFF;
     }
 
+}
+
+
+@media (max-width:375px) {
+    .poster__image__mobile-img {
+        height: 328px;
+        width: 328px;
+    }
+    
 }
