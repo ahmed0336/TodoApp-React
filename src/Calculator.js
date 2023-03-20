@@ -134,7 +134,9 @@ const downfunction = () =>{
 
 }
 
-const obj = {
+const obj = 
+[
+{
     backlog:[
     { id: 0, stagecount: 0 },
     { id: 1, stagecount: 1 },
@@ -155,6 +157,8 @@ const obj = {
     ],
 
 }
+
+]
 
 
 // const stageName = [
@@ -189,12 +193,12 @@ const obj = {
 
 
 
-// for(let a of stage){
+for(let a of obj){
     
-//     console.log(a)
+    console.log("foreach",a)
 
 
-// }
+}
 
 
 
