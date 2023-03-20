@@ -17,7 +17,7 @@ const Calculator = () => {
 
     },[])
 
-    
+
     const testinomialarray = [
         {
             name: "Ahmed",
@@ -54,6 +54,11 @@ const Calculator = () => {
     job:"front0end"
 }
 ]
+
+
+
+
+
 const [counter,setcounter]=useState(-1)
 
 const [title,settitle]=useState('')
@@ -128,6 +133,68 @@ const downfunction = () =>{
 
 
 }
+
+const obj = {
+    backlog:[
+    { id: 0, stagecount: 0 },
+    { id: 1, stagecount: 1 },
+    { id: 2, stagecount: 2 },
+    { id: 3, stagecount: 3 }
+    ],
+    toDo: [
+    { id: 4, stagecount: 4 },
+    { id: 5, stagecount: 5 },
+    { id: 6, stagecount: 6 },
+    ],
+    ongoing: [
+    { id: 7, stagecount: 7 },
+    { id: 8, stagecount: 8 },
+    ],
+    done: [
+    { id: 9, stagecount: 9 },
+    ],
+
+}
+
+
+// const stageName = [
+//     {
+//   backlog: [
+//     { id: 0, stagecount: 0 },
+//     { id: 1, stagecount: 1 },
+//     { id: 2, stagecount: 2 },
+//     { id: 3, stagecount: 3 },
+//   ],
+//   toDo: [
+//     { id: 4, stagecount: 4 },
+//     { id: 5, stagecount: 5 },
+//     { id: 6, stagecount: 6 },
+//   ],
+//   ongoing: [
+//     { id: 7, stagecount: 7 },
+//     { id: 8, stagecount: 8 },
+//   ],
+//   done: [
+//     { id: 9, stagecount: 9 },
+//   ],
+// }
+// ];
+
+
+
+
+
+
+
+
+
+
+// for(let a of stage){
+    
+//     console.log(a)
+
+
+// }
 
 
 
@@ -320,6 +387,10 @@ const downfunction = () =>{
                 </div>
 
             </div>
+
+
+
+         
 
 
 
