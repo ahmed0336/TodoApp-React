@@ -4,18 +4,19 @@ import img1 from './netfilx.jpg'
 import img2 from './Group 602.png'
 import img3 from './family-airport-Recovered2.jpg'
 import './Calculator.css'
+import { AiOutlineArrowLeft ,AiOutlineArrowRight } from "react-icons/ai";
 
 import mobile_img from './mobile-img.png'
 
 const Calculator = () => {
 
 
-    useEffect(()=>{
+    useEffect(() => {
 
         upfunction()
         downfunction()
 
-    },[])
+    }, [])
 
 
     const testinomialarray = [
@@ -42,163 +43,221 @@ const Calculator = () => {
 
     const jd = [
         {
-          name:"Ahmed",
-          job:"developer"
-    },
-    {
-        name:"Yaseen",
-        job:"businessman"
-  },
-  {
-    name:"Adnan",
-    job:"front0end"
-}
-]
+            name: "Ahmed",
+            job: "developer"
+        },
+        {
+            name: "Yaseen",
+            job: "businessman"
+        },
+        {
+            name: "Adnan",
+            job: "front0end"
+        }
+    ]
 
 
 
 
 
-const [counter,setcounter]=useState(-1)
+    const [counter, setcounter] = useState(-1)
 
-const [title,settitle]=useState('')
-const [job,setjob]=useState('')
+    const [title, settitle] = useState('')
+    const [job, setjob] = useState('')
 
-const [Review,setReview]=useState('')
-const [ReviewName,setReviewName]=useState('')
-
-
+    const [Review, setReview] = useState('')
+    const [ReviewName, setReviewName] = useState('')
 
 
 
-console.log("counter==>",counter)
+
+
+    console.log("counter==>", counter)
 
 
 
-const upfunction = () =>{
-    
-    // setcounter(counter+1)
-// console.log("upfunction",counter)
+    const upfunction = () => {
 
-// console.log("testinomialarray.length",testinomialarray.length-1)
+        // setcounter(counter+1)
+        // console.log("upfunction",counter)
 
-
-if(counter < testinomialarray.length-1 ){
-    setcounter(counter+1)
-    console.log("testinomialarray==>",testinomialarray)
-
-    let filterTestonomialData=testinomialarray.filter((a,index)=>index == (counter+1))
+        // console.log("testinomialarray.length",testinomialarray.length-1)
 
 
-    let filterJDData=jd.filter((a,index)=>index == (counter+1))
+        if (counter < testinomialarray.length - 1) {
+            setcounter(counter + 1)
+            console.log("testinomialarray==>", testinomialarray)
+
+            let filterTestonomialData = testinomialarray.filter((a, index) => index == (counter + 1))
 
 
-        
-    settitle(filterJDData[0]?.name)
-    setjob(filterJDData[0]?.job)
-
-    // console.log("filterdata",filterdata[0].name)
-
-    setReviewName(filterTestonomialData[0]?.name)
-    setReview(filterTestonomialData[0]?.Review)
+            let filterJDData = jd.filter((a, index) => index == (counter + 1))
 
 
-}
 
-}
+            settitle(filterJDData[0]?.name)
+            setjob(filterJDData[0]?.job)
 
-const downfunction = () =>{
-    console.log("downfunction")
+            // console.log("filterdata",filterdata[0].name)
 
-    if(counter > 0 )
-    {
-      
-        setcounter(counter-1)
-
-        let filterTestonomialData=testinomialarray.filter((a,index)=>index == (counter-1))
-
-        let filterJDData=jd.filter((a,index)=>index == (counter-1))
+            setReviewName(filterTestonomialData[0]?.name)
+            setReview(filterTestonomialData[0]?.Review)
 
 
-        
-    settitle(filterJDData[0].name)
-    setjob(filterJDData[0].job)
+        }
 
-    setReviewName(filterTestonomialData[0]?.name)
-    setReview(filterTestonomialData[0]?.Review)
+    }
 
+    const downfunction = () => {
+        console.log("downfunction")
+
+        if (counter > 0) {
+
+            setcounter(counter - 1)
+
+            let filterTestonomialData = testinomialarray.filter((a, index) => index == (counter - 1))
+
+            let filterJDData = jd.filter((a, index) => index == (counter - 1))
+
+
+
+            settitle(filterJDData[0].name)
+            setjob(filterJDData[0].job)
+
+            setReviewName(filterTestonomialData[0]?.name)
+            setReview(filterTestonomialData[0]?.Review)
+
+
+
+        }
 
 
     }
 
+    const obj =
 
-}
+    {
+        backlog: [
+            { id: 0, task: "Task 0" },
+            { id: 1, task: "Task 1" },
+            { id: 2, task: "Task 2" },
+            { id: 3, task: "Task 3" }
+        ],
+        toDo: [
+            { id: 4, task: "Task 4" },
+            { id: 5, task: "Task 5" },
+            { id: 6, task: "Task 6" },
+        ],
+        ongoing: [
+            { id: 7, task: "Task 7" },
+            { id: 8, task: "Task 8" },
+        ],
+        done: [
+            { id: 9, task: "Task 9" },
+        ],
 
-const obj = 
-[
-{
-    backlog:[
-    { id: 0, stagecount: 0 },
-    { id: 1, stagecount: 1 },
-    { id: 2, stagecount: 2 },
-    { id: 3, stagecount: 3 }
-    ],
-    toDo: [
-    { id: 4, stagecount: 4 },
-    { id: 5, stagecount: 5 },
-    { id: 6, stagecount: 6 },
-    ],
-    ongoing: [
-    { id: 7, stagecount: 7 },
-    { id: 8, stagecount: 8 },
-    ],
-    done: [
-    { id: 9, stagecount: 9 },
-    ],
+    }
 
-}
-
-]
-
-
-// const stageName = [
-//     {
-//   backlog: [
-//     { id: 0, stagecount: 0 },
-//     { id: 1, stagecount: 1 },
-//     { id: 2, stagecount: 2 },
-//     { id: 3, stagecount: 3 },
-//   ],
-//   toDo: [
-//     { id: 4, stagecount: 4 },
-//     { id: 5, stagecount: 5 },
-//     { id: 6, stagecount: 6 },
-//   ],
-//   ongoing: [
-//     { id: 7, stagecount: 7 },
-//     { id: 8, stagecount: 8 },
-//   ],
-//   done: [
-//     { id: 9, stagecount: 9 },
-//   ],
-// }
-// ];
+    const[backlogstage,setbacklogstage]=useState(obj.backlog)
+    const[toDostage,settoDostage]=useState(obj.toDo)
+    const[ongoingstage,setongoingstage]=useState(obj.ongoing)
+    const[donestage,setdonestage]=useState(obj.done)
 
 
+    console.log("backlogstage",backlogstage)
+    console.log("toDostage",toDostage)
+    console.log("ongoingstage",ongoingstage)
+    console.log("donestage",donestage)
 
 
+    // console.log("mystate==>",ahmed)
+
+    const keys = Object.keys(obj);
+
+    console.log("full data object==>",keys)
 
 
-
-
-
-
-for(let a of obj){
     
-    console.log("foreach",a)
+  const RightFunction = (arrayName,id) =>{
+
+    //     let backlog=obj.backlog
+    // let toDo=obj.toDo
+    // let ongoing=obj.ongoing
+    // let done=obj.done
+    console.log("RightFunction arrayName",arrayName)
+    console.log("RightFunction id",id)
+
+    const statusArray = obj[arrayName];
 
 
-}
+    console.log(statusArray)
+      
+    // yahan jis id pr click kr hy usko la rh hai
+    const taskIndex = statusArray.findIndex(task => task.id === id)
+
+    console.log("taskIndex",taskIndex)
+
+// yeh wo object hai jisko addd krna hai nextarray me
+    console.log("==>",statusArray[taskIndex])
+
+    let newObj =statusArray[taskIndex]
+
+    settoDostage([...toDostage, newObj]);
+
+     let ahmed =backlogstage.filter((a,index)=> a.id  !== id)
+     console.log("remove item",ahmed)
+    setbacklogstage(ahmed)
+    
+  }
+
+
+  const LeftFunction = (arrayName,id) =>{
+
+    console.log("LeftFunction arrayName",arrayName)
+    console.log("LeftFunction id",id)
+
+    const statusArray = obj[arrayName];
+
+
+    console.log("array of object==>",statusArray)
+      
+    // yahan jis id pr click kr hy usko la rh hai
+    const taskIndex = statusArray.findIndex(task => task.id === id)
+
+    console.log("taskIndex",taskIndex)
+
+    let newObj =statusArray[taskIndex]
+
+    setbacklogstage([...backlogstage, newObj])
+
+
+
+     let ahmed =toDostage.filter((a,index)=> a.id  !== id)
+     console.log("remove item",ahmed)
+
+    settoDostage(ahmed)
+
+  }
+
+        // console.log("obj.backlof",obj?.backlog)
+
+
+    //   for(let a of obj){
+
+    //     console.log("obj data==>",a)
+    //     let backlogdata=a.backlog.map((data,index)=>console.log("backlogdata==>",data))
+
+    //     let donedata=a.done.map((data,index)=>console.log("donedata==>",data))
+
+    //     let ongoinggdata=a.ongoing.map((data,index)=>console.log("ongoingdata==>",data))
+
+    //     let toDo=a.toDo.map((data,index)=>console.log("toDo==>",data))
+
+    //                   }
+
+
+
+
 
 
 
@@ -358,21 +417,21 @@ for(let a of obj){
                                jd.map((data,index)=>{
                                 return(
                                     <> */}
-                                     <h2>{title}</h2>
-                                     <p>{job}</p>
-                                    {/* </>
+                            <h2>{title}</h2>
+                            <p>{job}</p>
+                            {/* </>
                                 )
                                }) 
                             } */}
-                           
+
                         </div>
 
                     </div>
                 </div>
 
                 <div className='testonomial__center' >
-                    <button type='button' onClick={()=>upfunction()} >up</button>
-                    <button type='button' onClick={()=>downfunction()} >down</button>
+                    <button type='button' onClick={() => upfunction()} >up</button>
+                    <button type='button' onClick={() => downfunction()} >down</button>
                 </div>
 
                 <div className='testonomial__right' >
@@ -380,9 +439,9 @@ for(let a of obj){
                         testinomialarray.map((data, index) => {
                             return (
                                 <> */}
-                                    <h2>{ReviewName}</h2>
-                                    <p>{Review}</p>
-                                {/* </>
+                    <h2>{ReviewName}</h2>
+                    <p>{Review}</p>
+                    {/* </>
                             )
                         })
                     } */}
@@ -394,7 +453,88 @@ for(let a of obj){
 
 
 
-         
+            <div className='d-flex' >
+
+                <div className="card" style={{ width: '18rem' }}>
+                    <div className="card-header">
+                        Backlog
+                    </div>
+                    <ul className="list-group list-group-flush">
+                       {
+                        backlogstage?.map((data,index)=>{
+                            return(
+                                <>
+                                <li className="list-group-item">{data?.task} <AiOutlineArrowLeft onClick={()=>LeftFunction("backlog",data.id )} /> <AiOutlineArrowRight onClick={()=>RightFunction("backlog",data.id)} /> </li>
+                                </>
+                            )
+                        })
+                       }
+
+                      
+                    </ul>
+                </div>
+                <div className="card" style={{ width: '18rem' }}>
+                    <div className="card-header">
+                        To Do
+                    </div>
+                    <ul className="list-group list-group-flush">
+                       {
+                        toDostage?.map((data,index)=>{
+                            return(
+                                <>
+                                <li className="list-group-item">{data?.task} <AiOutlineArrowLeft onClick={()=>LeftFunction("toDo",data.id )} /> <AiOutlineArrowRight onClick={()=>RightFunction()} /> </li>
+                                </>
+                            )
+                        })
+                       }
+
+                      
+                    </ul>
+                </div>
+
+                {/* <div className="card" style={{ width: '18rem' }}>
+                    <div className="card-header">
+                        Ongoing
+                    </div>
+                    <ul className="list-group list-group-flush">
+                       {
+                        ongoingstage?.map((data,index)=>{
+                            return(
+                                <>
+                                <li className="list-group-item">{data?.task} <AiOutlineArrowLeft onClick={()=>LeftFunction()} /> <AiOutlineArrowRight onClick={()=>RightFunction()} /> </li>
+                                </>
+                            )
+                        })
+                       }
+
+                      
+                    </ul>
+                </div>
+
+                <div className="card" style={{ width: '18rem' }}>
+                    <div className="card-header">
+                        Done
+                    </div>
+                    <ul className="list-group list-group-flush">
+                       {
+                        donestage.map((data,index)=>{
+                            return(
+                                <>
+                                <li className="list-group-item">{data?.task} <AiOutlineArrowLeft onClick={()=>LeftFunction()} /> <AiOutlineArrowRight onClick={()=>RightFunction()} /> </li>
+                                </>
+                            )
+                        })
+                       }
+
+                      
+                    </ul>
+                </div> */}
+               
+            </div>
+
+
+
+
 
 
 
